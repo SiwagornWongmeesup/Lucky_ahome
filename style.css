@@ -1,0 +1,218 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+:root {
+    /* color */
+    --white-color: #fff;
+    --dark-color:  #2c2c2c;
+    --primary-color:  #fff5e1;
+    --secondary-color: #6d4c41;
+    --light-pink-color:#faf4f5;
+    --medium-gray-color: #ccc;
+
+    /* Font size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-sL: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    /* Font weight */
+    --font-weight-normal:400;
+    --font-weight-medium:500;
+    --font-weight-semibold:600;
+    --font-weight-bold:700;
+
+    /* Border radius */
+    --border-radius-s:8px;
+    --border-radius-m:30px;
+    --border-radius-circle:50px;
+
+    /* site max width */
+    --site-max-width:1300px;
+}
+
+/* Styling for whole site */
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img{
+    width: 100%;
+}
+
+/* navbar styling */
+header{
+    position: fixed; /*จะไม่เลื่อนตามหน้าเว็บเมื่อมีการเลื่อน (scroll) */
+    background:var(--primary-color);
+    z-index: 5;
+    width:100%;
+}
+
+header .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /*ทำให้เป็นวงกลม*/
+    border: 5px solid #1d2210;/* กรอบ */
+    background-color: white;
+}
+
+.navbar .nav-menu{
+    display: flex;
+    gap: 10px;
+}
+.navbar .nav-logo .logo-Text{
+    color:var(--secondary-color);
+}
+
+.navbar .nav-menu .nav-link{
+    padding: 10px 18px;
+    color:var(--secondary-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+}
+
+.navbar .nav-menu .nav-link:hover{
+    color: var(--white-color); /* เปลี่ยนสีตัวอักษรให้ชัดขึ้น */
+    background: var(--secondary-color); /* เปลี่ยนพื้นหลังเป็นสีม่วง */
+}
+
+.navbar:where(#menu-close-button, #menu-open-button){
+    display: none;
+}
+/* Hero section styling*/
+.hero-section{
+    min-height: 100vh;
+    background: var(--primary-color);
+    min-height: 30px;
+}
+
+.section-content{
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.hero-section .section-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    color: var(--secondary-color);
+}
+
+.hero-section .hero-details .title{
+    /* font-family: "miniver","sans-serif" ; */
+    font-size: var(--font-size-xl);
+}
+
+.hero-section .hero-details .subtitles{
+    /* font lond */
+    font-size: var(--font-size-xxl);
+    margin-top: 8px;
+    font-weight: var(--font-weight-semibold);
+}
+
+.hero-section .hero-details .description{
+   max-width: 70%;
+   margin: 15px 0 32px;
+   font-size: var(--font-size-m);
+}
+
+.hero-section .hero-details .button{
+    padding: 10px auto;
+    color: var(--dark-color);
+    border-radius: var(--border-radius-m);
+    font-weight: var(--font-weight-medium);
+    border: 10px solid transparent;  /**/
+    transition: 0.4s ease;
+   
+}
+
+.hero-section .hero-details .button:hover{
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--secondary-color);
+    
+
+}
+
+.hero-section .hero-image-wrapper{
+    max-width: 500px;
+    margin-right: 30px;
+}
+
+/* Responsive media query code for max width 900px */
+@media screen and (max-width:900px) {
+    :root{
+    --font-size-m: 1rem;
+    --font-size-sL: 1.3rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 1.8rem;
+    }
+
+    .navbar:where(#menu-close-button,#menu-open-button){
+        display: block;
+        font-size: var(--font-size-xxl);
+    }
+
+    .navbar #menu-close-button{
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }
+
+    .navbar #menu-open-button{
+        color: var(--white-color);
+    }
+    .navbar .nav-menu{
+        display: block;  /*กินพื้นที่เต็มความกว้างของ container (parent element)   ขึ้นบรรทัดใหม่อัตโนมัติ */
+         position: fixed;/*เหมาะสำหรับทำ เมนูที่อยู่กับที่, ปุ่มลอย (floating button), หรือ แถบแจ้งเตือน*/
+         left: 0;
+         top: 0;
+         width: 300px;
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding-top: 100px;/*ตรงกลาง*/
+         background: var(--white-color);
+         transition: left 0.2s ease;
+    }
+
+    body.show-mobile-menu   .navbar .nav-menu{
+        left: 0;
+    }
+
+    .navbar .nav-menu .nav-link{
+        color: var(--dark-color);
+        display: block;
+        margin-top: 17px;
+        font-size: var(--font-size-l);
+    }
+}
