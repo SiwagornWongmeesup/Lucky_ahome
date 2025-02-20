@@ -16,12 +16,14 @@
     --secondary-color: #6d4c41;
     --light-pink-color:#faf4f5;
     --medium-gray-color: #ccc;
+    --third-color: #d9a066;
+    
 
     /* Font size */
     --font-size-s: 0.9rem;
     --font-size-n: 1rem;
     --font-size-m: 1.12rem;
-    --font-size-sL: 1.5rem;
+    --font-size-l: 1.5rem;
     --font-size-xl: 2rem;
     --font-size-xxl: 2.3rem;
 
@@ -87,7 +89,7 @@ header .navbar{
     gap: 10px;
 }
 .navbar .nav-logo .logo-Text{
-    color:var(--secondary-color);
+    color:var(--third-color);
 }
 
 .navbar .nav-menu .nav-link{
@@ -103,25 +105,22 @@ header .navbar{
     background: var(--secondary-color); /* เปลี่ยนพื้นหลังเป็นสีม่วง */
 }
 
-.navbar:where(#menu-close-button, #menu-open-button){
-    display: none;
-}
 /* Hero section styling*/
 .hero-section{
     min-height: 100vh;
     background: var(--primary-color);
-    min-height: 30px;
+     padding: 50px 0; /* ปรับระยะห่างให้น้อยลง */
 }
 
 .section-content{
-    max-width: 1250px;
+    max-width: 1140px;
     margin: 0 auto;
 }
 
 .hero-section .section-content{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     min-height: 100vh;
     color: var(--secondary-color);
 }
@@ -136,6 +135,7 @@ header .navbar{
     font-size: var(--font-size-xxl);
     margin-top: 8px;
     font-weight: var(--font-weight-semibold);
+    color: var(--third-color);
 }
 
 .hero-section .hero-details .description{
@@ -168,18 +168,34 @@ header .navbar{
 }
 
 /* Responsive media query code for max width 900px */
+@media screen and (min-width:901px) {
+    .navbar :where(#menu-close-button,#menu-open-button){
+        display: none !important; /* ซ่อนปุ่ม Close */
+    }
+}
+
 @media screen and (max-width:900px) {
     :root{
     --font-size-m: 1rem;
-    --font-size-sL: 1.3rem;
+    --font-size-l: 1.3rem;
     --font-size-xl: 1.5rem;
     --font-size-xxl: 1.8rem;
     }
 
-    .navbar:where(#menu-close-button,#menu-open-button){
-        display: block;
-        font-size: var(--font-size-xxl);
-    }
+    body.show-mobile-menu header::before{
+        content:"" ;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+    } 
+
+   .navbar :where(#menu-close-button,#menu-open-button){
+    display: block;
+    font-size: var(--font-size-l);
+   }
 
     .navbar #menu-close-button{
         position: absolute;
@@ -188,12 +204,12 @@ header .navbar{
     }
 
     .navbar #menu-open-button{
-        color: var(--white-color);
+        color: var(--dark-color);
     }
     .navbar .nav-menu{
         display: block;  /*กินพื้นที่เต็มความกว้างของ container (parent element)   ขึ้นบรรทัดใหม่อัตโนมัติ */
          position: fixed;/*เหมาะสำหรับทำ เมนูที่อยู่กับที่, ปุ่มลอย (floating button), หรือ แถบแจ้งเตือน*/
-         left: 0;
+         left: -300px;
          top: 0;
          width: 300px;
          height: 100%;
@@ -203,6 +219,8 @@ header .navbar{
          padding-top: 100px;/*ตรงกลาง*/
          background: var(--white-color);
          transition: left 0.2s ease;
+         
+      
     }
 
     body.show-mobile-menu   .navbar .nav-menu{
@@ -215,4 +233,324 @@ header .navbar{
         margin-top: 17px;
         font-size: var(--font-size-l);
     }
+
+    .hero-section .section-content{
+        padding: 30px 20px 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        gap: 50px;
+    }
+    /*ทำให้อยู่ตรงกลางตอนย่อส่วน */
+    .hero-section .hero-details :is(.subtitles,.description){
+        max-width: 100%;
+    }
+
+    .hero-section .hero-details .buttons{
+        justify-content: center;
+    }
+
+    .hero-section .hero-image-wrapper{
+        max-width: 270px;
+        margin-right: 0;
+    }
+
+   
 }
+
+/*   <!-- menu section --> */
+
+.blog {
+    padding-top: 10px; /* Reduce top padding */
+}
+
+.blog-title{
+    font-size: var(--font-size-l);
+    padding: 60px 0 100px;
+    text-transform: uppercase;/*เปลี่ยนตัวอักษรทั้งหมดให้เป็น ตัวพิมพ์ใหญ่*/
+    text-align: center;
+}
+
+.blog-title::after{
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    background: var(--secondary-color);
+}
+
+.blog .blog-items img{
+    height: 350px;
+    width: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog .blog-items h4{
+    margin-top: 1rem;
+}
+
+.blog .blog-items p{
+    margin: 1rem 0;
+}
+
+.blog .blog-items a{
+    display: inline-block;/*ใช้ inline-block เมื่อต้องการให้อิลิเมนต์อยู่ในบรรทัดเดียวกัน*/
+    color: var(--white-color);
+    background-color:var(--third-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.blog-con{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+
+  
+}
+
+/* About section styling */
+.about{
+    min-height: 100vh;
+    min-height: 30px;
+    font-family: 'Poppins',sans-serif;
+}
+
+section{
+    padding: 50px 0;
+}
+
+.left .point-make{
+    text-align: center;
+}
+
+.about-section .title{
+    position: relative;
+    font-size: var(--font-size-xxl);
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+}
+
+.about-section .title::before{
+    position: absolute;
+    content: "";
+    width: 180px;
+    height: 3px;
+    background: black;
+    bottom: 0px;
+    left:50%;
+    transform: translate(-50%);
+}
+
+.about-section .title::after{
+    content: "เกี่ยวกับร้าน";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    color: var(--third-color);
+    padding: 4px ;
+    background-color: var(--white-color);
+    transform: translate(-50%);
+}
+
+.about-section .about-details img{
+    width: 500px;
+    height: 450px;
+    object-fit: cover;
+}
+
+.about-details{
+    display: flex;
+}
+
+.about-details .column-right1{
+    padding: 50px 0 50px;
+   line-height: 35px;
+   font-size: var(--font-size-n);
+   align-items: center;
+
+}
+/* About Me section */
+
+.about-me{
+  padding: 80px;
+}
+
+.titlee {
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลางแนวนอน */
+    width: 100%; /* ให้ใช้พื้นที่เต็ม */
+    
+}
+
+.popcon{
+    display: flex;
+}
+
+.about-details-me .column-right{
+    padding: 60px 0 50px ;
+    line-height: 40px;
+    font-size: var(--font-size-m);
+    align-items: center;
+}
+
+.social-link-list{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    gap: 25px;
+}
+
+.social-link-list .social-link{
+    color: var(--dark-color);
+    font-size: var(--font-size-l);
+    transition: 0.3s ease;
+}
+
+.social-link-list .social-link:hover{
+    color: var(--third-color);
+}
+.about-me .titlee{
+    position: relative;
+    text-align: center;
+    font-family: 'Ubuntu',sans-serif;
+}
+
+.about-me .titlee::before{
+    position: absolute;
+    content: "";
+    width: 180px;
+    height: 3px;
+    background: black;
+    bottom: 0px;
+    left:50%;
+    transform: translate(-50%);
+}
+
+.about-me .titlee::after{
+    content: "เกี่ยวกับฉัน";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    color: var(--third-color);
+    padding: 4px ;
+    background-color: var(--white-color);
+    transform: translate(-50%);
+}
+
+/* menu section */
+.Menu-section{
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    font-size: var(--font-size-l); 
+    padding: 50px 0;
+}
+
+.section-title{
+    font-size: var(--font-size-l);
+    text-align: center;
+    padding: 60px 0 100px;
+}
+
+.section-title::after{
+    content: "";
+    background: var(--third-color);
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+}
+.Menu-section .menu-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 110px;
+    justify-content: space-between;
+}
+/* ทำให้เมนูจัดเรียงเป็นแถวเดียวกัน */
+.Menu-section .menu-list .menu-items{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: calc(100% / 3 - 110px);
+}
+
+.Menu-section .menu-list .menu-items .name{
+    margin: 12px 0;
+    font-size: var(--font-size-l); 
+    font-weight: var(--font-weight-semibold);
+}
+
+.Menu-section .menu-list .menu-items .text{
+    font-size: var(--font-size-m); 
+}
+
+.Menu-section .menu-list .menu-items .button{
+    color: var(--white-color);
+    background-color: var(--third-color);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+/* เกี่ยวกับรูปเมนู */
+.Menu-section .menu-list .menu-items .menu-image{
+    max-width: 80%;
+    aspect-ratio: 1;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+/* 
+
+
+
+
+
+.about-section .section-content{
+    display: flex;
+    justify-content: space-between;
+    min-height: 100vh;
+    color: var(--secondary-color);
+}
+
+.about-section .about-details .slogan{
+    font-size: var(--font-size-l);
+    margin-top: 5rem;
+}
+
+.about-section .about-details .a{
+    font-size: var(--font-size-m);
+}
+
+.about-section .about-details .point-start{
+    margin-top: 1rem;
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+}
+
+.about-section .about-details .b{
+    font-size: var(--font-size-m);
+}
+
+.about-section .about-image-wrapper .point-make{
+    font-size: var(--font-size-m);
+    margin-top: 20px;
+    text-align: center;
+}
+   
+.about-section .about-image-wrapper .about-img{
+    width: 500px;
+    height: 400px; */
+   
+
+
+
