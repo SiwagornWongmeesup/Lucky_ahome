@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sandwich.css">
+     <!-- icon social -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <link rel="icon" type="jpg" href="photo/other/Logo-cut.jpg">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>เมนูแซนวิช</title>
+</head>
+<body>
+
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    
+    <!-- Herder -->
+    <header>
+        <nav class="navbar section-content">
+                <a href="" class="nav-logo">
+                    <img src="photo/other/Logo-cut.jpg" alt="" class="head-img">
+                    <h2 class="logo-Text">Lucky_ahome</h2>
+                </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-items">
+                    <a href="index.html" class="nav-link">หน้าหลัก</a>
+                </li>
+                <li class="nav-items">
+                    <a href="about.html" class="nav-link">เกี่ยวกับเรา</a>
+                </li>
+                <li class="nav-itemss">
+                    <a href="#" class="nav-link">เมนูอาหาร</a>
+                    <ul  class="dropdown">
+                        <li><a href="sandwich.html">เมนูแซนวิช</a></li>
+                        <li><a href="rice-menu.html">เมนูข้าว</a></li>
+                        <li><a href="salad.html">เมนูสลัด</a></li>
+                    </ul>
+                </li>
+                <li class="nav-items">
+                    <a href="Contact.html" class="nav-link">ช่องทางการติดต่อ</a>
+                </li>
+            </ul>
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+    <!-- Herder End -->
+
+      
+      <main>
+        <!-- Hero section -->
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-con">
+                    <div class="hero-info">
+                        <h3 class="title">เมนูแซนวิช</h3>
+                        <p>แซนวิชเป็นเมนูอาหารที่ได้รับความนิยมทั่วโลก เนื่องจากทำง่าย อิ่มท้อง และสามารถปรับแต่งไส้ได้หลากหลายตามความชอบ ไม่ว่าจะเป็นแซนวิชเย็น แซนวิชร้อน หรือแซนวิชเพื่อสุขภาพ</p>
+                    </div>
+               
+                    <div class="hero-img">
+                        <img src="photo/sanwich/ปก.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- เมนู section -->
+        <section class="Menu-section">
+            <h2 class="section-title">เมนูทั้งหมด</h2>
+            
+            <div class="section-content">
+                <ul class="menu-list">
+                    <li class="menu-items">
+                        <img src="photo/sanwich/ห่มผ้า-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">แซนวิชห่มผ้า</h3>
+                        <button class="button show-detail" 
+                            data-name="แซนวิชห่มผ้า" 
+                            data-text="ราคา: 15 บาท" 
+                            data-more-text="ขนมปังนุ่ม (เลือกได้ระหว่างขนมปังขาวหรือโฮลวีต)สามารถเลือกไส้ได้ห่อกับขนมปังพร้อมผัก"  
+                            data-img="photo/sanwich/ห่มผ้า.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/sanwich/ไข่กะทะ-removebg-preview.png" alt="" class="menu-image">
+                        <h3 class="name">ไข่กะทะ</h3>
+                        <button class="button show-detail" 
+                            data-name="ไข่กะทะ" 
+                            data-text="ราคา: 30 บาท" 
+                            data-more-text="ไข่ 2 ฟอง พร้อมท็อปปิ้งปูอัด, ไส้กรอก, แฮม และหมูรวน"  
+                            data-img="photo/sanwich/ไข่กะทะ.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    
+                    <li class="menu-items">
+                        <img src="photo/sanwich/ธรรมดา-removebg-preview.png" alt="" class="menu-image">
+                        <h3 class="name">แซนวิชเกาหลีชิ้นเล็ก</h3>
+                        <button class="button show-detail" 
+                            data-name="แซนวิชเกาหลีชิ้นเล็ก (เลือกได้ 1 ไส้)"
+                            data-text="ราคา: 20 บาท" 
+                            data-more-text="ขนมปังนุ่ม(เลือกได้ระหว่างขนมปังขาวหรือโฮลวีต)ทามายองเนสเคลือบทุกแผ่น ราดซอสชีสและซอสมะเขือเทศเลือกไส้ได้1อย่างพร้อมผัก3ชนิด(ผักสลัด, กะหล่ำม่วง, แครอท)"  
+                            data-img="photo/sanwich/ธรรมดา.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/sanwich/เกาหลีเล็ก-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">แซนวิชเกาหลีคู่เล็ก</h3>
+                        <button class="button show-detail" 
+                            data-name="แซนวิชเกาหลีคู่เล็ก  (เลือกได้ 2 ไส้)" 
+                            data-text="ราคา: 40 บาท" 
+                            data-more-text="ขนมปังนุ่ม (เลือกได้ระหว่างขนมปังขาวหรือโฮลวีต)ทามายองเนสเคลือบทุกแผ่นราดซอสชีสและซอสมะเขือเทศเลือกไส้ได้ 2 อย่างพร้อมผัก 3 ชนิด(ผักสลัด,กะหล่ำม่วง,แครอท)"  
+                            data-img="photo/sanwich/เกาหลีเล็ก.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/sanwich/เกาหลีใหญ่-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">แซนวิชเกาหลีคู่ใหญ่</h3>
+                        <button class="button show-detail" 
+                            data-name="แซนวิชเกาหลีคู่ใหญ่ (เลือกได้ 3 ไส้)" 
+                            data-text="ราคา: 59 บาท" 
+                            data-more-text="ขนมปังนุ่ม (เลือกได้ระหว่างขนมปังขาวหรือโฮลวีต)ทามายองเนส เคลือบทุกแผ่น ราดซอสชีสและซอสมะเขือเทศ เลือกไส้ได้ 3 อย่าง พร้อมผัก 3 ชนิด (ผักสลัด, กะหล่ำม่วง, แครอท)"  
+                            data-img="photo/sanwich/เกาหลีใหญ่.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    
+                    <li class="menu-items">
+                        <img src="photo/sanwich/โบราณเล็ก-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">แซนวิชโบราณ
+                            </Br>กล่องเล็ก</h3>
+                        <button class="button show-detail" 
+                            data-name="แซนวิชโบราณกล่องเล็ก" 
+                            data-text="ราคา 25 บาท" 
+                            data-more-text="ขนมปังแผ่นนุ่มทาด้วยซอสโบราณสูตรเข้มข้นทุกชั้น สอดไส้โบโลน่าหอม ๆ ใส่หมูหยองแบบจุก ๆ ก่อนราดซอสฉ่ำ ๆ เพิ่มรสกลมกล่อม อร่อยเต็มคำในสไตล์ดั้งเดิม"  
+                            data-img="photo/sanwich/โบราณเล็ก.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/sanwich/โบราณใหญ่-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">แซนวิชโบราณกล่องใหญ่</h3>
+                        <button class="button show-detail" 
+                            data-name="แซนวิชโบราณกล่องใหญ่" 
+                            data-text="ราคา: 55 บาท" 
+                            data-more-text="ขนมปังแผ่นนุ่มทาด้วยซอสโบราณสูตรเข้มข้นทุกชั้น สอดไส้โบโลน่าหอม ๆ ใส่หมูหยองแบบจุก ๆ ก่อนราดซอสฉ่ำ ๆ เพิ่มรสกลมกล่อม อร่อยเต็มคำในสไตล์ดั้งเดิม"  
+                            data-img="photo/sanwich/โบราณใหญ่.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+               
+                    <li class="menu-items">
+                        <img src="photo/sanwich/แซนวิชสลัด-removebg-preview.png" alt="" class="menu-image">
+                        <h3 class="name">แซนวิช+สลัด</h3>
+                        <button class="button show-detail" 
+                            data-name="แซนวิช+สลัด" 
+                            data-text="ราคา: 45 บาท" 
+                            data-more-text="ขนมปังนุ่ม (เลือกได้ระหว่างขนมปังขาวหรือโฮลวีต) ทามายองเนส เคลือบทุกแผ่น ราดซอสชีสและซอสมะเขือเทศ เสิร์ฟพร้อมไส้ปูอัดและโบโลน่าชีส พร้อมผัก 3 ชนิด (ผักสลัด, กะหล่ำม่วง, แครอท) และน้ำสลัดสูตรพิเศษ"  
+                            data-img="photo/sanwich/แซนวิชสลัด.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/sanwich/ชุดอาหารเช้า-removebg-preview.png" alt="" class="menu-image">
+                        <h3 class="name">ชุดอาหารเช้า</h3>
+                        <button class="button show-detail" 
+                            data-name="ชุดอาหารเช้า" 
+                            data-text="ราคา: 45 บาท" 
+                            data-more-text="ส่วนประกอบ:ประกอบด้วยไข่ดาว,แฮม,ไส้กรอก,เบค่อนกรอบ,เฟรนช์ฟรายส์ร้อนๆและขนมปังย่างเนย"  
+                            data-img="photo/sanwich/ชุดอาหารเช้า.jpg"    
+                            onclick="showDetail(this)">
+                        
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Popup Modal -->
+   
+        <!-- footer -->
+        <footer>
+            <div class="footer-top">
+                <div class="section-content">
+                    <div class="footer-top-items">
+                        <!-- โลโก้ร้าน -->
+                        <div class="footer-list">
+                            <img src="photo/other/Logo-full.jpg" alt="โลโก้ร้านแซนด์วิช" class="img-footer">
+                        </div>
+        
+                        <!-- เวลาทำการ -->
+                        <div class="footer-opentime">
+                          <h3>ร้านเปิด</h3>
+                          <p>06:00-20:30น.</p>
+                          <p>ปิดรับออเดอร์สุดท้าย 20:20น.</p>
+                        </div>
+        
+                        <!-- โซเชียลมีเดีย & ติดต่อ -->
+                        <div class="social-contact">
+                            <h3>ช่องทางการติดต่อ</h3>
+                            <ul class="contact-info-list">
+                                <li class="contact-info">
+                                    <a href="tel:064-294-4273" aria-label="โทรหาเรา">
+                                        <i class="fa-solid fa-phone"></i> 064-294-4273
+                                    </a>
+                                </li>
+                                <li class="contact-info">
+                                    <a href="https://www.facebook.com/share/14SQVKS1pH/" target="_blank" aria-label="Facebook">
+                                        <i class="fa-brands fa-facebook"></i> Facebook
+                                    </a>
+                                </li>
+                                <li class="contact-info">
+                                    <a href="https://www.instagram.com/lucky_ahome?igsh=MjQzcXhvaWludThn" target="_blank" aria-label="Instagram">
+                                        <i class="fa-brands fa-instagram"></i> Instagram
+                                    </a>
+                                </li>
+                                <li class="contact-info">
+                                    <a href="https://www.tiktok.com/@lucky_ahome?_t=ZS-8uZUsKyJaYW&_r=1" target="_blank" aria-label="TikTok">
+                                        <i class="fa-brands fa-tiktok"></i> TikTok
+                                    </a>
+                                </li>
+                                <li class="contact-info">
+                                    <a href="https://line.me/R/ti/p/@815ihnto?oat_content=url" target="_blank" aria-label="Line">
+                                        <i class="fa-brands fa-line"></i> Line
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        
+
+        <div id="food-modal" class="modal"> 
+            <div class="modal-bg"></div>
+            <div class="modal-content">
+                <span id="close-modal" class="close" onclick="closeModal()">
+                    <i class="fa-solid fa-x"></i>
+                </span>
+                <div class="model-section">
+                    <img id="modal-image" src="" alt="">
+                    <div class="model-script">
+                        <h3 style="font-size: 1.8vw ;" id="modal-name"></h3>
+                        
+                        <h2 style="font-size: 1.5vw;" id="modal-text"></h2>
+                        
+                        <p style="font-size: 1.3vw;"id="modal-dec"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- link swiper script -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+         <!-- link script -->
+        <script src="script.js"></script>
+</body>
+</html>

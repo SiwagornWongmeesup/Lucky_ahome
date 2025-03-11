@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rich-menu.css">
+     <!-- icon social -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <link rel="icon" type="jpg" href="photo/other/Logo-cut.jpg">
+    <title>เมนูข้าว</title>
+</head>
+<body>
+
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    
+    <!-- Herder -->
+    <header>
+        <nav class="navbar section-content">
+                <a href="" class="nav-logo">
+                    <img src="photo/other/Logo-cut.jpg" alt="" class="head-img">
+                    <h2 class="logo-Text">Lucky_ahome</h2>
+                </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-items">
+                    <a href="index.html" class="nav-link">หน้าหลัก</a>
+                </li>
+                <li class="nav-items">
+                    <a href="about.html" class="nav-link">เกี่ยวกับเรา</a>
+                </li>
+                <li class="nav-itemss">
+                    <a href="#" class="nav-link">เมนูอาหาร</a>
+                    <ul  class="dropdown">
+                        <li><a href="sandwich.html">เมนูแซนวิช</a></li>
+                        <li><a href="rice-menu.html">เมนูข้าว</a></li>
+                        <li><a href="salad.html">เมนูสลัด</a></li>
+                    </ul>
+                </li>
+                <li class="nav-items">
+                    <a href="Contact.html" class="nav-link">ช่องทางการติดต่อ</a>
+                </li>
+            </ul>
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+    <!-- Herder End -->
+
+      
+      <main>
+        <!-- Hero section -->
+      
+        <section class="Menu-section">
+            <h2 class="section-title">เมนูข้าวทั้งหมด</h2>
+            <div class="section-content">
+                <ul class="menu-list">
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ข้าวไข่ข้น-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไข่ข้น</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ข้น" 
+                            data-text="ราคา: 45 บาท" 
+                            data-more-text="ไข่ข้นนุ่มละมุนจากไข่ไก่ 2 ฟอง ปรุงรสอ่อน ๆ เสิร์ฟบนข้าวสวยร้อน ๆ กินง่าย อร่อยทุกคำ"  
+                            data-img="photo/rice-img/ข้าวไข่ข้น.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ข้าวไข่ข้นไส้กรอก-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไข่ข้นไส้กรอก</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ข้นไส้กรอก" 
+                            data-text="ราคา: 49 บาท" 
+                            data-more-text="ไข่ข้นนุ่ม ๆ คลุกเคล้ากับไส้กรอกหั่นชิ้นพอดีคำ  เสิร์ฟพร้อมข้าวสวยร้อน ๆ"  
+                            data-img="photo/rice-img/ข้าวไข่ข้นไส้กรอก.jpg"        
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ข้าวไข่ข้นแฮม-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไข่ข้นแฮม</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ข้นแฮม" 
+                            data-text="ราคา: 49 บาท" 
+                            data-more-text="ไข่ข้นนุ่มราดบนข้าวสวย เสิร์ฟคู่หมูรวนปรุงรสเค็มหวาน หอมกลิ่นกระทะ อร่อยลงตัว"  
+                            data-img="photo/rice-img/ข้าวไข่ข้นแฮม.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ไข่ข้นปูดอัด-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไข่ข้นปูดอัด</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ข้นปูดอัด" 
+                            data-text="ราคา: 49 บาท" 
+                            data-more-text="ไข่ข้นเนื้อเนียน ผสมปูอัดฉีกชิ้นพอดีคำ เพิ่มรสชาติหวานมันจากเนื้อปูอัด เสิร์ฟบนข้าวสวยร้อนๆ"  
+                            data-img="photo/rice-img/ไข่ข้นปูดอัด.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ไข่ข้นทูน่า-removebg-preview.png" alt="" class="menu-image">
+                        <h3 class="name">ข้าวไข่ข้นทูน่า</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ข้นทูน่า" 
+                            data-text="ราคา: 55 บาท" 
+                            data-more-text="ไข่ข้นเนื้อเนียน ผสมเนื้อทูน่าชิ้นโต หอมมัน เสิร์ฟบนข้าวสวยร้อน ๆ อร่อยง่ายสไตล์ญี่ปุ่น"  
+                            data-img="photo/rice-img/ไข่ข้นทูน่า.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ไข่ข้นหมูรวน-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไข่ข้นหมูรวน</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ข้นหมูรวน" 
+                            data-text="ราคา: 55 บาท" 
+                            data-more-text="ไข่ข้นนุ่มราดบนข้าวสวย เสิร์ฟคู่หมูรวนปรุงรสเค็มหวาน หอมกลิ่นกระทะ อร่อยลงตัว"  
+                            data-img="photo/rice-img/ไข่ข้นหมูรวน.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ไข่ข้นเบค่อน-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไข่ข้นเบค่อน</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ข้นเบค่อน" 
+                            data-text="ราคา: 59 บาท" 
+                            data-more-text="ไข่ข้นรสละมุน คลุกเคล้ากับเบคอนทอดกรอบ หอมกลิ่นรมควัน เสิร์ฟบนข้าวสวยร้อนๆ"  
+                            data-img="photo/rice-img/ไข่ข้นเบค่อน.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ไข่ข้นกระเพรา-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไข่ข้นกระเพรา</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ข้นกระเพรา" 
+                            data-text="ราคา: 65 บาท" 
+                            data-more-text="ไข่ข้นนุ่มจากไข่ไก่ 2 ฟอง ราดบนข้าวสวยร้อน ๆ เสิร์ฟคู่กับกะเพราหมูสับรสจัดจ้าน หอมกลิ่นใบกะเพราและพริกสด เพิ่มความอร่อยด้วยพริกน้ำปลา"  
+                            data-img="photo/rice-img/ไข่ข้นกระเพรา.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ไข่ข้นหมูญี่ปุ่น__2_-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไข่ข้นหมูญี่ปุ่น</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ข้นหมูญี่ปุ่น" 
+                            data-text="ราคา: 69 บาท" 
+                            data-more-text="ไข่ข้นเนียนนุ่ม เสิร์ฟพร้อมหมูสันคอผัดกับหอมใหญ่ หอมกลิ่นซอสน้ำซุปญี่ปุ่น รสกลมกล่อม เค็มหวานกำลังดี บนข้าวสวยร้อนๆ"  
+                            data-img="photo/rice-img/ไข่ข้นหมูญี่ปุ่น (3).jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ข้าวไข่ดาว-removebg-preview.png" alt="" class="menu-image">
+                        <h3 class="name">ข้าวไข่ดาว</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่ดาว" 
+                            data-text="ราคา: 30 บาท" 
+                            data-more-text="ข้าวสวยร้อน ๆ เสิร์ฟคู่ไข่ดาวทอดกรอบนอก นุ่มใน ไข่แดงเยิ้มกำลังดี กินคู่กับซอสหรือพริกน้ำปลาฟินสุดๆ"  
+                            data-img="photo/rice-img/ข้าวไข่ดาว.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ไข่ข้นรวมมิตร-removebg-preview.png" alt="" class="menu-image">
+                        <h3 class="name">ข้าวไข่เจียวทรงเครื่อง</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไข่เจียวทรงเครื่อง" 
+                            data-text="ราคา: 40 บาท" 
+                            data-more-text="ไข่เจียวฟูกรอบ ใส่หมูสับ ไส้กรอก ปูอัด และแฮม หอมอร่อย เต็มคำ เสิร์ฟร้อนๆ บนข้าวสวย"  
+                            data-img="photo/rice-img/ไข่ข้นรวมมิตร.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ข้าวกระเพราหมูสับ-removebg-preview.png" alt="" class="menu-image">
+                        <h3 class="name">ข้าวกระเพราหมูสับ</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวกระเพราหมูสับ" 
+                            data-text="ราคา: 45 บาท" 
+                            data-more-text="ข้าวกะเพราหมูสับเป็นหนึ่งในเมนูยอดฮิตของคนไทย ด้วยรสชาติจัดจ้าน หอมใบกะเพราและพริกกระเทียม ทานคู่กับข้าวสวยร้อน ๆ และไข่ดาวหรือไข่เจียว อร่อยลงตัว"  
+                            data-img="photo/rice-img/ข้าวกระเพราหมูสับ.jpg"   
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ข้าวไก่ทอด-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไก่ทอด</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไก่ทอด" 
+                            data-text="ราคา: 40 บาท" 
+                            data-more-text="ไก่หมักเครื่องปรุงจนเข้าเนื้อ ทอดกรอบนอกนุ่มใน หอมอร่อย เสิร์ฟพร้อมข้าวสวยและซอสราดตามชอบ"  
+                            data-img="photo/rice-img/ข้าวไก่ทอด.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ข้าวไก่ทอดทงคัตซึ-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไก่ทอดทงคัตซึ</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไก่ทอดทงคัตซึ" 
+                            data-text="ราคา: 55 บาท" 
+                            data-more-text="ไก่ชุบแป้งทอดกรอบสไตล์ญี่ปุ่น เสิร์ฟคู่ข้าวสวยและซอสทงคัตสึรสเข้มข้น อร่อยกรุบกรอบทุกคำ"  
+                            data-img="photo/rice-img/ข้าวไก่ทอดทงคัตซึ.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ข้าวไก่เทริ-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวไก่เทริยากิ</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวไก่เทริยากิ" 
+                            data-text="ราคา: 60 บาท" 
+                            data-more-text="เนื้อไก่ย่างราดซอสเทอริยากิเข้มข้น หวานเค็มกลมกล่อม เสิร์ฟบนข้าวสวยร้อน ๆ โรยงาขาวเพิ่มความหอม"  
+                            data-img="photo/rice-img/ข้าวไก่เทริ.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+              
+                    <li class="menu-items">
+                        <img src="photo/rice-img/ไข่ข้นหมูญี่ปุ่น-removebg-preview.png" alt="" class="menu-image">
+                        <span class="best-seller">Best Seller</span>
+                        <h3 class="name">ข้าวหน้าหมูญี่ปุ่น</h3>
+                        <button class="button show-detail" 
+                            data-name="ข้าวหน้าหมูญี่ปุ่น" 
+                            data-text="ราคา: 79 บาท" 
+                            data-more-text="หมูสไลซ์นุ่ม ๆ ผัดกับหอมใหญ่ในซอสน้ำซุปญี่ปุ่น หอมหวานกลมกล่อม เสิร์ฟบนข้าวร้อนๆ"  
+                            data-img="photo/rice-img/ไข่ข้นหมูญี่ปุ่น.jpg"    
+                            onclick="showDetail(this)">
+                            ดูรายละเอียด
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+         <!-- footer -->
+         <footer>
+            <div class="footer-top">
+                <div class="section-content">
+                    <div class="footer-top-items">
+                        <!-- โลโก้ร้าน -->
+                        <div class="footer-list">
+                            <img src="photo/other/Logo-full.jpg" alt="โลโก้ร้านแซนด์วิช" class="img-footer">
+                        </div>
+        
+                        <!-- เวลาทำการ -->
+                        <div class="footer-opentime">
+                          <h3>ร้านเปิด</h3>
+                          <p>06:00-20:30น.</p>
+                          <p>ปิดรับออเดอร์สุดท้าย 20:20น.</p>
+                        </div>
+        
+                        <!-- โซเชียลมีเดีย & ติดต่อ -->
+                        <div class="social-contact">
+                            <h3>ช่องทางการติดต่อ</h3>
+                            <ul class="contact-info-list">
+                                <li class="contact-info">
+                                    <a href="tel:064-294-4273" aria-label="โทรหาเรา">
+                                        <i class="fa-solid fa-phone"></i> 064-294-4273
+                                    </a>
+                                </li>
+                                <li class="contact-info">
+                                    <a href="https://www.facebook.com/share/14SQVKS1pH/" target="_blank" aria-label="Facebook">
+                                        <i class="fa-brands fa-facebook"></i> Facebook
+                                    </a>
+                                </li>
+                                <li class="contact-info">
+                                    <a href="https://www.instagram.com/lucky_ahome?igsh=MjQzcXhvaWludThn" target="_blank" aria-label="Instagram">
+                                        <i class="fa-brands fa-instagram"></i> Instagram
+                                    </a>
+                                </li>
+                                <li class="contact-info">
+                                    <a href="https://www.tiktok.com/@lucky_ahome?_t=ZS-8uZUsKyJaYW&_r=1" target="_blank" aria-label="TikTok">
+                                        <i class="fa-brands fa-tiktok"></i> TikTok
+                                    </a>
+                                </li>
+                                <li class="contact-info">
+                                    <a href="https://line.me/R/ti/p/@815ihnto?oat_content=url" target="_blank" aria-label="Line">
+                                        <i class="fa-brands fa-line"></i> Line
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <div id="food-modal" class="modal"> 
+            <div class="modal-bg"></div>
+            <div class="modal-content">
+                <span id="close-modal" class="close" onclick="closeModal()">
+                    <i class="fa-solid fa-x"></i>
+                </span>
+                <div class="model-section">
+                    <img id="modal-image" src="" alt="">
+                    <div class="model-script">
+                        <h3 style="font-size: 1.8vw ;" id="modal-name"></h3>
+                        
+                        <h2 style="font-size: 1.5vw;" id="modal-text"></h2>
+                        
+                        <p style="font-size: 1.3vw;"id="modal-dec"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- link swiper script -->
+         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+         <!-- link script -->
+        <script src="script.js"></script>
+</body>
+</html>

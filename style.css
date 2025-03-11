@@ -1,0 +1,776 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    /* color */
+    --white-color: #fff;
+    --dark-color:  #2c2c2c;
+    --primary-color:  #fff5e1;
+    --secondary-color: #6d4c41;
+    --light-pink-color:#f3eff3;
+    --medium-gray-color: #ccc;
+    --third-color: #d9a066;
+    
+
+    /* Font size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.2rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    /* Font weight */
+    --font-weight-normal:400;
+    --font-weight-medium:500;
+    --font-weight-semibold:600;
+    --font-weight-bold:700;
+
+    /* Border radius */
+    --border-radius-s:8px;
+    --border-radius-m:30px;
+    --border-radius-circle:50px;
+
+    /* site max width */
+    --site-max-width:1300px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Styling for whole site */
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img{
+    width: 100%;
+}
+
+/* navbar styling */
+header{
+    background:var(--white-color);
+    z-index: 5;
+    width:100%;
+}
+
+header .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.section-content .nav-logo{
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .nav-logo .head-img{
+   width: 85px;
+   object-fit: cover;
+   border-radius: 40%;
+   display: flex;
+}
+
+.navbar .contro{
+    display: flex;
+}
+/* scroll-up */
+.scroll-up-btn { 
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    background-color: #856e67;
+    right: 45px;
+    bottom: 10px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 50%;
+    z-index: 9999;
+    cursor: pointer;
+    opacity: 0;  /* ซ่อนปุ่มเริ่มต้น */
+    pointer-events: none; /* ปิดการคลิกตอนซ่อน */
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+    opacity: 1;  /* แสดงปุ่มเมื่อ scroll ลง */
+    pointer-events: auto; /* เปิดการคลิก */
+}
+
+
+
+
+.profile-img{
+    width: 405px;
+    height: 405px;
+    border-radius: 50%; /*ทำให้เป็นวงกลม*/
+    border: 5px solid #1d2210;/* กรอบ */
+    background-color: white;
+    object-fit: cover;
+}
+
+.navbar .nav-menu{
+    display: flex;
+    gap: 10px;
+}
+.navbar .nav-logo .logo-Text{
+    padding-top: 15px;
+    color:var(--secondary-color);
+    font-size: var(--font-size-xl);
+}
+
+.navbar .nav-menu .nav-link{
+    padding: 10px 18px;
+    color:var(--secondary-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+}
+/* vvvvvv */
+.navbar .nav-itemss{
+    position: relative;
+}
+
+.navbar .nav-itemss .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white-color);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* ซ่อนเมนูย่อย */
+    border-radius: var(--border-radius-m);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-itemss:hover .dropdown {
+    display: block; /* แสดงเมนูย่อยเมื่อ hover */
+}
+
+.navbar .nav-itemss .dropdown li {
+    padding: 10px 18px;
+}
+
+.navbar .nav-itemss .dropdown li a {
+    color: var(--third-color);
+    text-decoration: none;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.navbar .nav-itemss .dropdown li a:hover {
+    background: var(--secondary-color);
+    color: var(--white-color);
+}
+/* vvvvvv */
+.navbar .nav-menu .nav-link:hover{
+    color: var(--white-color); /* เปลี่ยนสีตัวอักษรให้ชัดขึ้น */
+    background: var(--secondary-color); /* เปลี่ยนพื้นหลังเป็นสีม่วง */
+}
+
+.navbar  :where(#menu-close-button,#menu-open-button){
+    display: none;
+}
+
+
+
+/* Hero section styling*/
+.hero-section {
+    width: 100%;
+    min-height: 100vh; /* ทำให้สูงเต็มจอ */
+    background: var(--primary-color);
+    display: flex;
+    align-items: center; /* จัดตรงกลางแนวตั้ง */
+    justify-content: center; /* จัดตรงกลางแนวนอน */
+}
+
+.section-content{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.hero-section .section-content{
+    display: flex;
+    padding-bottom: 100px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--secondary-color);
+}
+
+.hero-section .hero-details .title{
+    /* font-family: "miniver","sans-serif" ; */
+    font-size:2.5rem;
+    
+}
+
+.hero-section .hero-details .subtitles{
+    /* font lond */
+    font-size:3.5rem;
+    margin-top: 8px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--third-color);
+}
+
+.hero-section .hero-details .description{
+   max-width: 100%;
+   margin: 5px 0 25px;
+   font-size: var(--font-size-m);
+}
+
+.hero-section .hero-details .button{
+    padding: 10px;
+    color: var(--white-color);
+    border-radius: var(--border-radius-m);
+    font-weight: var(--font-weight-medium);
+    border: none; /* ไม่มีขอบปกติ */
+    outline: 2px solid transparent;
+    transition: 0.4s ease;
+    background-color: var(--secondary-color);
+   
+}
+
+.hero-section .hero-details .button:hover{
+    background: transparent;
+    color: var(--dark-color);
+    outline-color: var(--dark-color);
+   
+}
+
+.hero-section .hero-image-wrapper{
+    max-width: 500px;
+    margin-right: 30px;
+}
+
+
+
+
+/* blog-title */
+.blog-title{
+    font-size: var(--font-size-l);
+    padding: 60px 0 60px;
+    text-transform: uppercase;/*เปลี่ยนตัวอักษรทั้งหมดให้เป็น ตัวพิมพ์ใหญ่*/
+    text-align: center;
+}
+
+.blog-title::after{
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    background: var(--secondary-color);
+    transition: 0.5s ease-in-out;
+}
+/* เมื่อ hover ที่หัวข้อ ให้เส้นขยายออก */
+.blog-title:hover::after{
+    width: 30%;
+}
+
+/*   <!-- menu section --> */
+
+.Menu-section{
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    font-size: var(--font-size-l); 
+    
+}
+
+
+.Menu-section .menu-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 110px;
+    justify-content: space-between;
+}
+/* ทำให้เมนูจัดเรียงเป็นแถวเดียวกัน */
+.Menu-section .menu-list .menu-items{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: calc(100% / 3 - 105px);
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+}
+
+.Menu-section .menu-list .menu-items .name{
+    margin: 12px 0;
+    font-size: var(--font-size-l); 
+    font-weight: var(--font-weight-semibold);
+}
+
+.Menu-section .menu-list .menu-items .text{
+    font-size: var(--font-size-m); 
+}
+
+.Menu-section .menu-list .menu-items .button{
+    color: var(--white-color);
+    background-color: var(--third-color);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+/* เกี่ยวกับรูปเมนู */
+.Menu-section .menu-list .menu-items .menu-image{
+    max-width: 80%;
+    aspect-ratio: 1;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+/* Best sell */
+.menu-items {
+    position: relative; /* ทำให้ .best-seller อ้างอิงตำแหน่งจากตรงนี้ */
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.best-seller {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(255, 238, 0);
+    color: rgb(3, 0, 0);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    
+    /* ทำให้เป็นแฉกแบบดาว */
+    clip-path: polygon(
+        50% 0%, 61% 16%, 80% 10%, 85% 30%, 100% 40%, 85% 50%, 
+        100% 60%, 85% 70%, 80% 90%, 61% 84%, 50% 100%, 39% 84%, 
+        20% 90%, 15% 70%, 0% 60%, 15% 50%, 0% 40%, 15% 30%, 
+        20% 10%, 39% 16%
+    );
+}
+
+/* team section */
+
+.teams{
+    background: var(--primary-color);
+}
+
+.teams-slider {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.box .text{
+    font-size: var(--font-size-l);
+}
+
+.box p {
+    font-size: var(--font-size-m);
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 250px;
+}
+
+.card img {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border-radius: 50%; /*ทำให้เป็นวงกลม*/
+    border: 5px;/* กรอบ */
+    object-fit: cover;
+    object-position: top;
+}
+
+/* team section end*/
+
+/* Contact section */
+
+.contact-section{
+    background: var(--primary-color);
+}
+
+.section-title{
+    font-size: var(--font-size-l);
+    text-align: center;
+    padding: 150px 0 60px;
+}
+
+.section-title::after {
+    content: "";
+    background: var(--third-color);
+    height: 5px;
+    width: 80px;  /* เริ่มต้นที่ 0 */
+    display: block;
+    margin: 10px auto 0;
+    transition:0.5s ease-in-out;
+}
+
+/* เมื่อ hover ที่หัวข้อ ให้เส้นขยายออก */
+.section-title:hover::after {
+    width: 20%;
+}
+
+
+.contact-section .section-content{
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;      /*อยุ่ด้านบนสุดของcontainer*/
+    justify-content: space-between;
+}
+
+.contact-section .contact-info{
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    align-items: center;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+}
+
+.contact-info a {
+    display: flex;
+    align-items: center; /* จัดไอคอนกับข้อความให้อยู่ตรงกลางแนวตั้ง */
+    gap: 10px; /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+    text-decoration: none;
+    transition: 0.3s;
+    color: var(--dark-color);
+}
+
+.contact-section .contact-info :hover{
+    color: var(--third-color);
+}
+
+/* footer section */
+
+.footer-top {
+    background-color: #333; /* เปลี่ยนเป็นสีเทาเข้ม */
+    padding: 40px; /* เพิ่มช่องว่างภายใน */
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+  }
+  
+
+
+/* modal */
+.modal {
+    display: none; /* ซ่อน modal ตอนแรก */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex !important;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 500px; /* ปรับขนาดให้พอดี */
+    max-height: 80vh; /* ป้องกัน modal ใหญ่เกินไป */
+    overflow-y: auto; /* ถ้ามีเนื้อหาเยอะให้ scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.model-section {
+    display: flex;
+    flex-direction: row; /* วางรูปกับข้อความข้างกัน */
+    align-items: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 20px; /* ระยะห่างระหว่างรูปกับข้อความ */
+    width: 100%;
+}
+
+.model-section img {
+    height: 150px; /* ปรับขนาดรูป */
+    width: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.model-section .text-content {
+    max-width: 60%; /* ป้องกันข้อความล้น */
+    text-align: left; /* จัดข้อความชิดซ้าย */
+    word-wrap: break-word; /* ป้องกันข้อความยาวเกินไป */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.model-script{
+    margin-left: 40px;
+    text-align: start;
+}
+
+/* Responsive media query code for max width 900px */
+@media screen and (min-width:901px) {
+    .navbar :where(#menu-close-button,#menu-open-button){
+        display: none !important; /* ซ่อนปุ่ม Close */
+    }
+}
+
+@media screen and (max-width:900px) {
+    :root{
+    --font-size-m: 1rem;
+    --font-size-l: 1.3rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 1.8rem;
+    }
+
+   body.show-mobile-menu header::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+
+
+   .navbar :where(#menu-close-button,#menu-open-button){
+    display: block;
+    font-size: var(--font-size-l);
+   }
+
+    .navbar #menu-close-button{
+        position: absolute;
+        right: 30px;
+        top: 30px;  
+    }
+
+    .navbar #menu-open-button{
+        color: var(--dark-color);
+    }
+    .navbar .nav-menu{
+        display: block;  /*กินพื้นที่เต็มความกว้างของ container (parent element)   ขึ้นบรรทัดใหม่อัตโนมัติ */
+         position: fixed;/*เหมาะสำหรับทำ เมนูที่อยู่กับที่, ปุ่มลอย (floating button), หรือ แถบแจ้งเตือน*/
+         left: -300px;
+         top: 0;
+         width: 300px;
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding-top: 100px;/*ตรงกลาง*/
+         background: var(--white-color);
+         transition: left 0.2s ease;
+         z-index: 1000; 
+         
+      
+    }
+
+    .navbar .nav-logo .head-img {
+        margin-left: 30px;
+    }
+
+
+    body.show-mobile-menu   .navbar .nav-menu{
+        left: 0;
+    }
+
+    .navbar .nav-menu .nav-link{
+        color: var(--secondary-color);
+        display: block;
+        margin-top: 17px;
+        font-size:1.5rem;
+    }
+
+    .hero-section .hero-details .title{
+        /* font-family: "miniver","sans-serif" ; */
+        font-size:2rem;
+        
+    }
+
+    .hero-section .hero-details .subtitles{
+        /* font lond */
+        font-size:2.5rem;
+        font-weight: var(--font-weight-semibold);
+        color: var(--third-color);
+    }
+
+    .hero-section .section-content{
+        padding: 30px 20px 20px;
+        flex-direction: column-reverse;
+        justify-content: center; 
+        text-align: center;
+        gap: 50px;
+    }
+    /*ทำให้อยู่ตรงกลางตอนย่อส่วน */
+    .hero-section .hero-details :is(.subtitles,.description),.about-section .about-details{
+        max-width: 100%;
+    }
+
+    .hero-section .hero-details .buttons{
+        justify-content: center;
+    }
+
+    .hero-section .hero-image-wrapper{
+        max-width: 450px;
+        margin-right: 0;
+    }
+
+    .Menu-section .menu-list{
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 1rem;
+    }
+
+    .Menu-section .menu-list .menu-items{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: calc(100% / 2 - 105px);
+    margin: 1rem 1.5rem;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .Menu-section .menu-list .menu-items{
+        width: calc(100% / 1 - 105px);
+    }
+
+    .hero-section .section-content{
+        margin-bottom: 1rem;
+    }
+
+    .contact-section .section-content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Menu-section .menu-list{
+        padding: 1rem;
+        align-items: center;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width:390px) {
+
+    .navbar .nav-logo .head-img{
+        margin: 0%;
+
+    }
+    .hero-section .hero-image-wrapper{
+        max-width: 390px;
+        margin-right: 0;
+    }
+
+    .model-script{
+        margin-left: 15px;
+    }
+    
+    .modal-content{
+        padding: 20px;
+        max-height: 80vh;
+        max-width: 300px;
+    }
+
+    .model-section {
+        display: flex;
+        flex-direction: row; /* วางรูปกับข้อความข้างกัน */
+        align-items: center; /* จัดให้อยู่ตรงกลาง */
+        gap: 0px; /* ระยะห่างระหว่างรูปกับข้อความ */
+        width: 100%;
+    }
+    
+    .model-section img {
+        height: 120px; /* ปรับขนาดรูป */
+        width: 120px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .profile-img{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .card img{
+        width: 300px;
+        height: 300px;
+    }
+
+    ul{
+        padding-left: 18px;
+    }
+
+}
