@@ -207,6 +207,10 @@ header .navbar{
     width: 100%;
 }
 
+.swiper-button-next:after, .swiper-button-prev:after{
+    color: #d9a066;
+}
+
 
 .card {
    border-radius: 10px;
@@ -288,6 +292,11 @@ header .navbar{
     color: #444;
 }
 
+.point-change{
+    font-size: 1.5rem;
+    color: #444;
+}
+
 .b, .c {
     font-size: 1.2rem;
     line-height: 1.9;
@@ -310,7 +319,7 @@ header .navbar{
     content: "";
     width: 180px;
     height: 3px;
-    background: black;
+    background:  #d9a066;
     bottom: 0px;
     left:50%;
     transform: translate(-50%);
@@ -322,7 +331,6 @@ header .navbar{
       bottom: -12px;
       left: 50%;
       font-size: 20px;
-      color: var(--third-color);
       padding: 4px ;
       background-color: var(--white-color);
       transform: translate(-50%);

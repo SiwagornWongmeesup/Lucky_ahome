@@ -398,6 +398,8 @@ header .navbar{
     max-width: 900px;
     margin: auto;
     overflow: hidden;
+    position: relative;
+    z-index: 10; /* ลดระดับ Swiper */
 }
 
 .box .text{
@@ -418,12 +420,27 @@ header .navbar{
     justify-content: center;
 }
 
+.swiper-button-next:after, .swiper-button-prev:after {
+    color: #d9a066;
+}
+
 .card {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 20px;
     width: 250px;
+}
+
+.card img.people{
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border-radius: 50%; /*ทำให้เป็นวงกลม*/
+    border: 5px;/* กรอบ */
+    object-fit: cover;
+    object-position: top;
 }
 
 .card img {
@@ -434,8 +451,8 @@ header .navbar{
     border-radius: 50%; /*ทำให้เป็นวงกลม*/
     border: 5px;/* กรอบ */
     object-fit: cover;
-    object-position: top;
 }
+
 
 /* team section end*/
 
@@ -517,6 +534,7 @@ header .navbar{
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    z-index: 50; /* ให้ Modal อยู่ด้านหน้า Swiper */
 }
 
 .modal.show {
@@ -719,10 +737,15 @@ header .navbar{
         align-items: center;
         width: 100%;
     }
+
+    .model-section{
+        display: block;
+        width: 100%;
+    }
     
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:400px) {
 
     .navbar .nav-logo .head-img{
         margin: 0%;
@@ -765,12 +788,16 @@ header .navbar{
     }
 
     .card img{
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
 
     ul{
         padding-left: 18px;
     }
 
+    .model-section{
+        display: block;
+        width: 100%;
+    }
 }

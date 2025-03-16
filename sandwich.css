@@ -700,10 +700,16 @@ footer {
         text-align: center;
         padding-left: 120px;
     }
+
+    
+    .model-section{
+        display: block;
+        width: 100%;
+    }
 }
 
 /* ✅ Responsive สำหรับหน้าจอเล็กกว่า 390px */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 400px) {
     .section-content .nav-logo {
         font-size: var(--font-size-xl);
         gap: 20px;
@@ -769,6 +775,12 @@ footer {
     .contact-info-list {
         text-align: center;
         padding-left: 70px;
+    }
+
+    
+    .model-section{
+        display: block;
+        width: 100%;
     }
 }
 
